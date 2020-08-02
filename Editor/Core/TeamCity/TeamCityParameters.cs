@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using UnityEngine;
 
 public class TeamCityParameters
 {
@@ -47,8 +48,11 @@ public class TeamCityParameters
 			sb.AppendLine(line);
 			var split = line.Split('=');
 			if (split.Length >= 2)
+			{
 				dict.Add(split[0], split[1]);
+			}
 		}
+		Debug.Log(sb.ToString());
 		return dict;
 	}
 }
