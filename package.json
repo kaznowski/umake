@@ -8,7 +8,7 @@
 		{
 			"displayName": "Examples",
 			"description": "Basic examples of UMake targets and actions",
-			"path": "Samples~/Examples"
+			"path": "Editor/Samples~/Examples"
 		}
 	]
 }
