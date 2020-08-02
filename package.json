@@ -1,8 +1,14 @@
 {
 	"name": "studio.doublecake.umake",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"displayName": "UMake",
 	"description": "This is UMake project",
 	"unity": "2019.4",
-	"samples": []
+	"samples": [
+		{
+			"displayName": "Examples",
+			"description": "Basic examples of UMake targets and actions",
+			"path": "Samples~/Examples"
+		}
+	]
 }
