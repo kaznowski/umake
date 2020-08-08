@@ -1,6 +1,6 @@
+using System;
 using System.Runtime.Serialization;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 namespace UnityMake
@@ -29,42 +29,12 @@ namespace UnityMake
 		public static bool IsInCli = false;
 		public static readonly Dictionary<string, string> Args = new Dictionary<string, string>();
 
-		public static void GetPref()
-		{
-			GetArgs();
-
-			string prefKey;
-			Args.TryGetValue( "key", out prefKey );
-
-			string prefValue = EditorPrefs.GetString( prefKey, "" );
-
-			Debug.LogFormat( "GETTING EDITOR PREF: '{0}' = '{1}'", prefKey, prefValue );
-		}
-
-		public static void SetPref()
-		{
-			GetArgs();
-
-			string prefKey;
-			Args.TryGetValue( "key", out prefKey );
-
-			string prefValue;
-			Args.TryGetValue( "value", out prefValue );
-
-			EditorPrefs.SetString( prefKey, prefValue );
-
-			Debug.LogFormat( "SETTING EDITOR PREF: '{0}' = '{1}'", prefKey, prefValue );
-		}
-
-		private static void ExecuteOnTarget( System.Action<UMake, UMakeTarget> callback )
+		private static void ExecuteOnTarget(TeamCityParameters tcParameters, Action<UMake, UMakeTarget> callback)
 		{
 			if( callback == null )
 				return;
 
-			GetArgs();
-
-			string targetName;
-			Args.TryGetValue( "target", out targetName );
+			string targetName = tcParameters.UMakeTarget;
 
 			UMakeTarget target;
 			if( !UMake.GetTarget( targetName ).TryGet( out target ) )
@@ -77,46 +47,17 @@ namespace UnityMake
 
 		public static void Build()
 		{
-			ExecuteOnTarget( ( umake, target ) =>
+			var tcParameters = new TeamCityParameters();
+			IsInCli = true;
+			
+			ExecuteOnTarget( tcParameters, ( umake, target ) =>
 			{
-				string buildPath;
-				Args.TryGetValue( "path", out buildPath );
-
+				string buildPath = tcParameters.UMakeBuildPath;
 				Debug.LogFormat( "\n\nBuilding for target: '{0}' at '{1}'.\n\n", target.name, buildPath );
 
-				target.Build( umake, buildPath);
+				target.Build(umake, buildPath);
+				target.ExecutePostBuildActions(umake);
 			} );
-		}
-
-		public static void PostBuild()
-		{
-			ExecuteOnTarget( ( umake, target ) =>
-			{
-				target.ExecutePostBuildActions( umake );
-			} );
-		}
-
-		public static void BuildAndPostBuild()
-		{
-			Build();
-			PostBuild();
-		}
-
-		private static void GetArgs()
-		{
-			string[] allArgs = System.Environment.GetCommandLineArgs();
-
-			if( allArgs == null )
-				throw new CliErrorException( "No args provided." );
-
-			foreach( var arg in allArgs )
-			{
-				int index = arg.IndexOf( ':' );
-				if( index >= 0 )
-					Args[arg.Substring( 0, index )] = arg.Substring( index + 1 );
-			}
-
-			IsInCli = true;
 		}
 	}
 }
