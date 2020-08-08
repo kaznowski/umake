@@ -20,7 +20,7 @@ namespace UnityMake
 		[MenuItem("Window/UMake/Import latest UMake Version")]
 		public static void ImportLatest()
 		{
-			Client.Add("git@github.com:kaznowski/umake.git#upm");
+			Client.Add("https://github.com/kaznowski/umake.git#upm");
 		}
 
 		public override void OnInspectorGUI()
