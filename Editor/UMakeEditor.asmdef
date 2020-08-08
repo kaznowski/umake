@@ -1,0 +1,17 @@
+{
+    "name": "UMake.Core.Editor",
+    "references": [
+        "GUID:046fbfe100539d947902c51c774b2296"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
