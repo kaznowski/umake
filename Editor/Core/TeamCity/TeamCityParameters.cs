@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using UnityEngine;
+using UnityMake;
 
-public class TeamCityParameters
+public class TeamCityParameters : IUMakeParameterProvider
 {
 	public string BuildNumber => GetValue("build.number");
 	public string ProjectName => GetValue("teamcity.projectName");

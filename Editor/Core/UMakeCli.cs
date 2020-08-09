@@ -29,31 +29,34 @@ namespace UnityMake
 		public static bool IsInCli = false;
 		public static readonly Dictionary<string, string> Args = new Dictionary<string, string>();
 
-		private static void ExecuteOnTarget(TeamCityParameters tcParameters, Action<UMake, UMakeTarget> callback)
+		private static void ExecuteOnTarget(IUMakeParameterProvider parameters, Action<UMake, UMakeTarget> callback)
 		{
 			if( callback == null )
 				return;
 
-			string targetName = tcParameters.UMakeTarget;
+			string targetName = parameters.UMakeTarget;
 
 			UMakeTarget target;
 			if( !UMake.GetTarget( targetName ).TryGet( out target ) )
 				throw new CliErrorException( string.Format( "Could not find target '{0}'.", targetName ) );
 
 			UMake umake;
-			if( UMake.Get().TryGet( out umake ) )
+			if (UMake.Get().TryGet(out umake))
+			{
+				umake.Parameters = parameters;
 				callback( umake, target );
+			}
 		}
 
 		public static void Build()
 		{
-			var tcParameters = new TeamCityParameters();
+			var parameters = new TeamCityParameters();
 			IsInCli = true;
 			
-			ExecuteOnTarget( tcParameters, ( umake, target ) =>
+			ExecuteOnTarget( parameters, ( umake, target ) =>
 			{
-				string buildPath = tcParameters.UMakeBuildPath;
-				Debug.LogFormat( "\n\nBuilding for target: '{0}' at '{1}'.\n\n", target.name, buildPath );
+				string buildPath = parameters.UMakeBuildPath;
+				Debug.LogFormat("\n\nBuilding for target: '{0}' at '{1}'.\n\n", target.name, buildPath);
 
 				target.Build(umake, buildPath);
 				target.ExecutePostBuildActions(umake);

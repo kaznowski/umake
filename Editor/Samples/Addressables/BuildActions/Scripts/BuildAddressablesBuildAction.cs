@@ -20,13 +20,12 @@ namespace UnityMake
         
         public override void Execute(UMake umake, UMakeTarget target)
         {
-            var tc = new TeamCityParameters();
             var addressableSettings = AddressableAssetSettingsDefaultObject.Settings;
             
-            if (tc.Valid)
+            if (umake.Parameters != null)
             {
-                profileName = tc.GetValue("umake.addressables.profile");
-                buildPath = tc.GetValue("umake.addressables.build_path");
+                profileName = umake.Parameters.GetValue("umake.addressables.profile");
+                buildPath = umake.Parameters.GetValue("umake.addressables.build_path");
             }
 
             if (!string.IsNullOrEmpty(profileName))

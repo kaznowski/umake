@@ -5,6 +5,14 @@ using UnityEngine;
 
 namespace UnityMake
 {
+    public interface IUMakeParameterProvider
+    {
+        string UMakeTarget { get; }
+        string UMakeBuildPath { get; }
+        
+        string GetValue(string key, string defaultValue = "");
+    }
+    
     public sealed class UMake : ScriptableObject
     {
         public const string buildPathPrefKey = "UMake_BuildPath_";
@@ -14,7 +22,9 @@ namespace UnityMake
         [UMakeTargetActions] public UMakeTarget[] targets;
 
         private static Option<UMake> instance = Functional.None;
-
+        
+        public IUMakeParameterProvider Parameters { get; set; }
+        
         public static string BuildPathPref
         {
             get { return EditorPrefs.GetString(buildPathPrefKey + PlayerSettings.productName, ""); }
