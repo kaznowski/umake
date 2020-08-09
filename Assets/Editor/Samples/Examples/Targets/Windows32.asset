@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -15,6 +16,6 @@ MonoBehaviour:
   buildOptions: 0
   fileNameOverride: Game_{TARGET}_{VERSION}.exe
   preBuildActions:
-  - {fileID: 11400000, guid: f6e33dfb6ed775e4fbc3044f69d21401, type: 2}
+  - {fileID: 11400000, guid: 957d79767bd3920468f9e82ce065c0b0, type: 2}
   postBuildActions:
   - {fileID: 11400000, guid: 5443bd662028395469f1f03a53de0030, type: 2}

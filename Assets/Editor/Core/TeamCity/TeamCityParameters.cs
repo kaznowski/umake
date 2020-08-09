@@ -11,6 +11,8 @@ public class TeamCityParameters
 	public string BuildConfigurationName => GetValue("teamcity.buildConfName");
 	public string UMakeTarget => GetValue("umake.target");
 	public string UMakeBuildPath => GetValue("umake.buildpath");
+	
+	public bool Valid => dictionary != null;
 
 	private Dictionary<string, string> dictionary;
     
@@ -38,6 +40,9 @@ public class TeamCityParameters
 	
 	private Dictionary<string, string> BuildParameterDictionary(string filePath)
 	{
+		if (!File.Exists(filePath))
+			return null;
+		
 		var dict = new Dictionary<string, string>();
 		var lines = File.ReadAllLines(filePath);
 

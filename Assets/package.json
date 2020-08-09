@@ -9,6 +9,11 @@
 			"displayName": "Examples",
 			"description": "Basic examples of UMake targets and actions",
 			"path": "Editor/Samples~/Examples"
+		},
+		{
+			"displayName": "Addressables",
+			"description": "UMake Build actions for interfacing with the addressable system.\nDepends on Addressable system",
+			"path": "Editor/Samples~/Addressables"
 		}
 	]
 }

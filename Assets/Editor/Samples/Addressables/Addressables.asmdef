@@ -1,8 +1,9 @@
 {
-    "name": "Examples",
+    "name": "Examples.Addressables",
     "references": [
         "GUID:d86bd8b4fe773cc4db9a407a9586695a",
-        "GUID:ef9308d450ca3de47bd6e92eff4b5566"
+        "GUID:ef9308d450ca3de47bd6e92eff4b5566",
+        "GUID:69448af7b92c7f342b298e06a37122aa"
     ],
     "includePlatforms": [
         "Editor"
