@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407d749078eb5a04c9e0c566017a753d, type: 3}
+  m_Script: {fileID: 11500000, guid: be10ec54472e43b1a4f588bfe4829789, type: 3}
   m_Name: Android
   m_EditorClassIdentifier: 
   buildTarget: 13
   buildOptions: 0
   fileNameOverride: Game_{TARGET}_{VERSION}
   preBuildActions:
-  - {fileID: 11400000, guid: cad301b78d187384d8a39d3f06ab7732, type: 2}
-  - {fileID: 11400000, guid: 61c2c3cf46509fa43b7baa2b79a97b74, type: 2}
+  - {fileID: 11400000, guid: 6276b05b23cf4ed39081f20147a6e830, type: 2}
+  - {fileID: 11400000, guid: 12782fadd0d14347af76edafe8f74877, type: 2}
   postBuildActions: []

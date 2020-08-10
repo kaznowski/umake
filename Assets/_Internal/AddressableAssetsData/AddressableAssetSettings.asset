@@ -22,9 +22,9 @@ MonoBehaviour:
     m_Id: a1235842d7e8dca4a9fcc5548cdf1f97
   m_overridePlayerVersion: 
   m_GroupAssets:
-  - {fileID: 11400000, guid: b11014a0c2319de48abacb36002e8430, type: 2}
-  - {fileID: 11400000, guid: bda52698f3c326848a36c98305d7043c, type: 2}
-  - {fileID: 11400000, guid: 9b268b215da10694db6ac5ae5a66df96, type: 2}
+  - {fileID: 11400000, guid: 27b8f8cccb82417f81be4ddad6f5f041, type: 2}
+  - {fileID: 11400000, guid: 22baef0bec6b4f96a917c1022f84e95d, type: 2}
+  - {fileID: 11400000, guid: 36242af87cf94275aeb57b039095874e, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -82,17 +82,17 @@ MonoBehaviour:
     - default
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
-  - {fileID: 11400000, guid: b4010ff274820c64db9f6ade52ac42f6, type: 2}
+  - {fileID: 11400000, guid: b8eba8c11b5b4fd787dbebe93ec052cd, type: 2}
   m_InitializationObjects: []
   m_CertificateHandlerType:
     m_AssemblyName: 
     m_ClassName: 
   m_ActivePlayerDataBuilderIndex: 3
   m_DataBuilders:
-  - {fileID: 11400000, guid: 377fe72b0f2c0834ea8063ea773192b1, type: 2}
-  - {fileID: 11400000, guid: e6705bced57ea914384c6302c8147df1, type: 2}
-  - {fileID: 11400000, guid: 4949b28a885ec904bbe2a00531aa91b9, type: 2}
-  - {fileID: 11400000, guid: 94c37a304c967ff4aa6756292ca20afa, type: 2}
+  - {fileID: 11400000, guid: f7a51cfd877c4246827eeab6fd03a0bb, type: 2}
+  - {fileID: 11400000, guid: b517ceea38904c3e8717f72258be9683, type: 2}
+  - {fileID: 11400000, guid: d436b2592a2840389c0844f2129ae25f, type: 2}
+  - {fileID: 11400000, guid: a206b782d48e40acac3c9c81b45413c8, type: 2}
   m_ActiveProfileId: ca65fa6c6a2f38a4eb91e711726292fc
   m_HostingServicesManager:
     m_HostingServiceInfos: []

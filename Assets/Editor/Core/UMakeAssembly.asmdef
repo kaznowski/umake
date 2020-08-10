@@ -1,8 +1,8 @@
 {
     "name": "UMakeAssembly",
     "references": [
-        "GUID:046fbfe100539d947902c51c774b2296",
-        "GUID:ef9308d450ca3de47bd6e92eff4b5566"
+        "GUID:fdc182ab15de408f9889828dbc4b0d2f",
+        "GUID:5727a49b58504450811eb8deb099fc02"
     ],
     "includePlatforms": [
         "Editor"

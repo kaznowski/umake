@@ -14,7 +14,6 @@ public class TeamCityParameters : IUMakeParameterProvider
 	public string UMakeBuildPath => GetValue("umake.buildpath");
 	
 	public bool Valid => dictionary != null;
-
 	private Dictionary<string, string> dictionary;
     
 	public TeamCityParameters()

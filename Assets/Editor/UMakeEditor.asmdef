@@ -1,7 +1,7 @@
 {
     "name": "UMake.Core.Editor",
     "references": [
-        "GUID:046fbfe100539d947902c51c774b2296"
+        "GUID:fdc182ab15de408f9889828dbc4b0d2f"
     ],
     "includePlatforms": [
         "Editor"
