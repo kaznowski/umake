@@ -28,7 +28,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     m_mainAssetType: 
   m_ReadOnly: 1
-  m_Settings: {fileID: 11400000, guid: 8ecaba404d08e8b4181ef1b30b40989d, type: 2}
+  m_Settings: {fileID: 11400000, guid: b5378fe853e74516997207bfad80c4cc, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: fb9b127a9d1d8884b88ba1dc99a47eda, type: 2}
+    - {fileID: 11400000, guid: 5ba6ef123fb741d98e9f5b56939e208b, type: 2}

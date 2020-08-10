@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5d17a21594effb4e9591490b009e7aa, type: 3}
   m_Name: c54ea3db05ac5a04fba2bb9e413a5989_BundledAssetGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: bda52698f3c326848a36c98305d7043c, type: 2}
+  m_Group: {fileID: 11400000, guid: 22baef0bec6b4f96a917c1022f84e95d, type: 2}
   m_Compression: 1
   m_IncludeInBuild: 1
   m_BundledAssetProviderType:

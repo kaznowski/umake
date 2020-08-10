@@ -24,8 +24,8 @@ MonoBehaviour:
     m_mainAssetType: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: 8ecaba404d08e8b4181ef1b30b40989d, type: 2}
+  m_Settings: {fileID: 11400000, guid: b5378fe853e74516997207bfad80c4cc, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: ad526805f853c2349badf71a008f4cbb, type: 2}
-    - {fileID: 11400000, guid: e13805e46a5b58845982a6b229a70c42, type: 2}
+    - {fileID: 11400000, guid: cdb4ff12894e4c6e82b43d107a0015eb, type: 2}
+    - {fileID: 11400000, guid: be74167764ab4738bd349df5ccc35409, type: 2}
