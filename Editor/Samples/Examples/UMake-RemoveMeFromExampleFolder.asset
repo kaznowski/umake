@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e1e6ca1b3a6427499a5aa4463efd658, type: 3}
-  m_Name: UMake
+  m_Name: UMake-RemoveMeFromExampleFolder
   m_EditorClassIdentifier: 
+  uMakeBuildInformation: {fileID: 11400000, guid: eda254cc18b8dd44c98c2dd34d752809,
+    type: 2}
   version: 0.1
   targets:
-  - {fileID: 11400000, guid: d5dd3aea5b464ce28f2740cb6ff896dc, type: 2}
   - {fileID: 11400000, guid: a05602776f2e45999487c75618280487, type: 2}
-  - {fileID: 11400000, guid: 49684aba91eb47d88990eb9512a193ab, type: 2}
   - {fileID: 11400000, guid: 11fedfd04dcc45feb3a02c64c6ca173d, type: 2}

@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6200c42b51348274f8cd231696a3f40d, type: 3}
-  m_Name: UpdateBuildVersion
+  m_Script: {fileID: 11500000, guid: bf5f013ff4a84f45b22ca83752d4ff78, type: 3}
+  m_Name: SteamUploadBuildAction
   m_EditorClassIdentifier: 
-  buildNumber: 2
+  contentSubFolder: windows_content/x86
+  buildScript: app_build_<steam_appid>.vdf
+  skipSteamContentCopy: 0
