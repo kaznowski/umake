@@ -4,10 +4,12 @@ namespace UnityMake
 {
 	public sealed class AndroidKeyAction : UMakeBuildAction
 	{
+		public bool useCustomKeystore = false;
 		public string keyStorePath = "user.keystore";
 		public string keyStorePassword = "keyStorePassword";
 		public string keyAliasName = "aliasName";
 		public string keyAliasPassword = "keyAliasPassword";
+	
 
 		public override void Execute(UMake umake, UMakeTarget target)
 		{
@@ -18,10 +20,10 @@ namespace UnityMake
 				UpdateIfValid(umake.Parameters, "umake.android.keystore.alias", ref keyAliasName);
 				UpdateIfValid(umake.Parameters, "umake.android.keystore.aliasPassword", ref keyAliasPassword);
 			}
-			
+
+			PlayerSettings.Android.useCustomKeystore = useCustomKeystore;
 			PlayerSettings.keystorePass = keyStorePassword;
 			PlayerSettings.keyaliasPass = keyAliasPassword;
-
 			PlayerSettings.Android.keystoreName = keyStorePath;
 			PlayerSettings.Android.keyaliasName = keyAliasName;
 		}
