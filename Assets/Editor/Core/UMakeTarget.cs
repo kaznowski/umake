@@ -30,7 +30,7 @@ namespace UnityMake
 				if (preBuildAction != null)
 					preBuildAction.Execute(umake, this);
 			}
-
+			umake.UpdateLastBuildInformation(this);
 			AssetDatabase.SaveAssets();
 		}
 
@@ -43,7 +43,7 @@ namespace UnityMake
 				if (postBuildAction != null)
 					postBuildAction.Execute(umake, this);
 			}
-
+			
 			AssetDatabase.SaveAssets();
 		}
 

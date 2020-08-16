@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf7a867409b2ed9458a16a30dac3b185, type: 3}
-  m_Name: NormalizeBundleIdentifier
+  m_Script: {fileID: 11500000, guid: 6200c42b51348274f8cd231696a3f40d, type: 3}
+  m_Name: UpdateBuildVersion
   m_EditorClassIdentifier: 
-  TargetBundleIdentifier: com.doublecake.studio
+  targetVersionCode: -1
