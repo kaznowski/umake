@@ -16,6 +16,9 @@ MonoBehaviour:
   buildOptions: 0
   fileNameOverride: Game_{TARGET}_{VERSION}
   preBuildActions:
-  - {fileID: 11400000, guid: 6276b05b23cf4ed39081f20147a6e830, type: 2}
-  - {fileID: 11400000, guid: 12782fadd0d14347af76edafe8f74877, type: 2}
+  - {fileID: 11400000, guid: 20ea531e3009124499776e02dc2823e7, type: 2}
+  - {fileID: 11400000, guid: d0869f2e7d4794f4c96c1bf9c46e0a9b, type: 2}
+  - {fileID: 11400000, guid: 1ba9fc10a92ffae40ad38e8d9cf6d193, type: 2}
+  - {fileID: 11400000, guid: de7653827f82421ba3ddaa9d9eb5c2df, type: 2}
+  - {fileID: 11400000, guid: bb0704e18c40db0428886c4de4058f4b, type: 2}
   postBuildActions: []
