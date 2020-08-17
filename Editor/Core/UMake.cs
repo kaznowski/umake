@@ -72,6 +72,7 @@ namespace UnityMake
             uMakeBuildInformation.TargetGroup = Enum.GetName(typeof(BuildTargetGroup), targetGroup);
             uMakeBuildInformation.ApplicationIdentifier = Application.identifier;
             uMakeBuildInformation.Version = Application.version;
+            uMakeBuildInformation.BuildDate = DateTime.UtcNow.AddHours(uMakeBuildInformation.BuildTimeZone).ToString();
             switch (target.buildTarget)
             {
                 case BuildTarget.iOS:
