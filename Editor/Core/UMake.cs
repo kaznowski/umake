@@ -115,7 +115,9 @@ namespace UnityMake
                 case BuildTarget.tvOS: return RuntimePlatform.tvOS;
                 case BuildTarget.Switch: return RuntimePlatform.Switch;
                 case BuildTarget.Lumin: return RuntimePlatform.Lumin;
+                #if UNITY_2019_4_OR_NEWER
                 case BuildTarget.Stadia: return RuntimePlatform.Stadia;
+                #endif
             }
 
             return Application.platform;
