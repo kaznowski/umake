@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 public class UMakeBuildInformation : ScriptableObject
@@ -13,6 +14,8 @@ public class UMakeBuildInformation : ScriptableObject
     public string ApplicationIdentifier;
     public string Version;
     public string VersionCode;
+    public string BuildDate;
+    public int BuildTimeZone = -3;
     
     [Header("Commit Infos")]
     public string CommitUID = "undefined";
