@@ -8,8 +8,10 @@ public class UpdateOrIncrementBuildVersionCode : UMakeBuildAction
     /// <summary>
     /// If target VersionCode is Equals 
     /// </summary>
-    [Tooltip("If targetVersionCode equals or less than 0 (ZERO), this action will ignore the number and will work incrementing the current build version. Remember: CLI Number always has priority")]
-    [SerializeField] private int targetVersionCode = -1;
+    [Tooltip(
+        "If targetVersionCode equals or less than 0 (ZERO), this action will ignore the number and will work incrementing the current build version. Remember: CLI Number always has priority")]
+    [SerializeField]
+    private int targetVersionCode = -1;
 
     public override void Execute(UMake umake, UMakeTarget target)
     {
@@ -38,15 +40,20 @@ public class UpdateOrIncrementBuildVersionCode : UMakeBuildAction
 
         if (!string.Equals(externalVersion, scriptableTarget, StringComparison.CurrentCultureIgnoreCase))
         {
-            if (int.TryParse(externalVersion, out int b))
+            if (target.buildTarget == BuildTarget.Android)
             {
-                PlayerSettings.Android.bundleVersionCode = b;
+                if (int.TryParse(externalVersion, out int b))
+                {
+                    PlayerSettings.Android.bundleVersionCode = b;
+                }
             }
             else if (target.buildTarget == BuildTarget.iOS)
             {
                 PlayerSettings.iOS.buildNumber = externalVersion;
             }
         }
+
+        Debug.Log($"Update Version number to: {externalVersion}");
     }
 }
 
