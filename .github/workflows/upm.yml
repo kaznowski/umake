@@ -15,15 +15,19 @@ jobs:
       run: |
         git config --global user.name 'github-bot'
         git config --global user.email 'github-bot@users.noreply.github.com'
-        git branch tmp
-        git checkout tmp 
+        git checkout -b tmp
+        git merge -s ours staging 
+        git checkout staging
+        git merge --no-commit tmp
         if [[ -d "Assets/Editor/Samples" ]]; then
           git mv Assets/Editor/Samples Assets/Editor/Samples~
           rm -f Assets/Editor/Samples.meta
           rm -rf Assets/_Internal
           rm -rf Assets/_Internal.meta
         fi
-        git log -b main -1 --oneline --format=%B | git commit -a -F -
+        git add .
+        git log -b main -1 --oneline --format=%B | git commit -a --amend -F -
+        git push -f -u origin staging
         git branch -d upm &> /dev/null || echo upm branch not found
         git subtree split -P "Assets" -b upm
         git push -f -u origin upm
