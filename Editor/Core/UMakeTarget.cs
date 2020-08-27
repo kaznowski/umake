@@ -57,13 +57,18 @@ namespace UnityMake
 			Path targetPath = new Path {path = buildPath};
 			if (!UMakeCli.IsInCli)
 			{
-				GetTargetPath(umake.version, UMake.GetBuildPath());
+			
+				targetPath = GetTargetPath(umake.version, UMake.GetBuildPath());
 
 				if (Directory.Exists(targetPath.directoryPath))
 				{
 					Directory.Delete(targetPath.directoryPath, true);
 					Directory.CreateDirectory(targetPath.directoryPath);
 				}
+			}
+			else
+			{
+				UMake.BuildPathPref = buildPath;
 			}
 
 			string[] levels = EditorBuildSettings.scenes.Where(s => s.enabled).Select(s => s.path).ToArray();

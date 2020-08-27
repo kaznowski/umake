@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be10ec54472e43b1a4f588bfe4829789, type: 3}
-  m_Name: Windows
+  m_Name: iOS
   m_EditorClassIdentifier: 
-  buildTarget: 19
+  buildTarget: 9
   buildOptions: 0
-  fileNameOverride: Game_{TARGET}_{VERSION}.exe
+  fileNameOverride: 
   preBuildActions:
+  - {fileID: 11400000, guid: 20ea531e3009124499776e02dc2823e7, type: 2}
   - {fileID: 11400000, guid: 1ba9fc10a92ffae40ad38e8d9cf6d193, type: 2}
   - {fileID: 11400000, guid: bb0704e18c40db0428886c4de4058f4b, type: 2}
-  - {fileID: 11400000, guid: 20ea531e3009124499776e02dc2823e7, type: 2}
-  postBuildActions: []
+  postBuildActions:
+  - {fileID: 11400000, guid: 743beb32c528851419c713264b93de11, type: 2}
