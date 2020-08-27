@@ -18,14 +18,14 @@ jobs:
         git branch -d staging &> /dev/null || echo staging branch not found      
         git checkout staging 
         git merge --no-ff --no-commit main 
-        if [[ -d "Editor/Samples" ]]; then
-          git mv Editor/Samples Editor/Samples~
-          rm -f Editor/Samples.meta
-          rm -rf _Internal
-          rm -rf _Internal.meta
+        if [[ -d "Assets/Editor/Samples" ]]; then
+          git mv Assets/Editor/Samples Editor/Samples~
+          rm -f Assets/Editor/Samples.meta
+          rm -rf Assets/_Internal
+          rm -rf Assets/_Internal.meta
         fi
         git commit -am "fix: Samples => Samples~"
         git push -f -u origin staging
-        git branch -d upm &> /dev/null || echo upm branch not found      
-        git subtree split -P "Assets" -b upm        
+        git branch -d upm &> /dev/null || echo upm branch not found
+        git subtree split -P "Assets" -b upm
         git push -f -u origin upm
