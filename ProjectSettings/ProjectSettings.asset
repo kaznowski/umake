@@ -170,8 +170,9 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.doublecake.studio
     Standalone: com.doublecake.studio
+    iPhone: com.doublecake.studio
   buildNumber:
-    iPhone: 2
+    iPhone: 9
   AndroidBundleVersionCode: 17
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
