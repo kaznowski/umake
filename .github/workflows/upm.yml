@@ -23,8 +23,9 @@ jobs:
           rm -f Editor/Samples.meta
           rm -rf _Internal
           rm -rf _Internal.meta
-          git commit -am "fix: Samples => Samples~"
         fi
+        git commit -am "fix: Samples => Samples~"
         git push -f -u origin staging
+        git branch -d upm &> /dev/null || echo upm branch not found      
         git subtree split -P "Assets" -b upm        
         git push -f -u origin upm
