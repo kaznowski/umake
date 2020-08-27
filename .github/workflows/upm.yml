@@ -16,8 +16,8 @@ jobs:
         git config --global user.name 'github-bot'
         git config --global user.email 'github-bot@users.noreply.github.com'
         git checkout -b tmp
-        git merge -s ours staging 
-        git checkout staging
+        git merge -s ours origin/staging 
+        git checkout -b staging origin/staging
         git merge --no-commit tmp
         if [[ -d "Assets/Editor/Samples" ]]; then
           git mv Assets/Editor/Samples Assets/Editor/Samples~
