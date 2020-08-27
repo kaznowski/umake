@@ -24,7 +24,7 @@ jobs:
           rm -rf Assets/_Internal
           rm -rf Assets/_Internal.meta
         fi
-        git commit -am "fix: Samples => Samples~"
+        git log -b main -1 --oneline --format=%B | git commit -am --file -
         git push -f -u origin staging
         git branch -d upm &> /dev/null || echo upm branch not found
         git subtree split -P "Assets" -b upm
