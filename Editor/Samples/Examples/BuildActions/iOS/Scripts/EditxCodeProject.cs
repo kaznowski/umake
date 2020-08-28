@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEditor;
+#if UNITY_IOS
 using UnityEditor.iOS.Xcode;
+#endif
 using System.IO;
 using UnityEngine;
 using UnityMake;
@@ -13,6 +15,8 @@ public class EditxCodeProject : UMakeBuildAction // Will execute after XCode pro
     {
         if (target.buildTarget == BuildTarget.iOS) // Check if the build is for iOS 
         {
+#if UNITY_IOS
+
             string plistPath = target.GetTargetPath(umake.version, UMake.GetBuildPath()).path + "/Info.plist";
 
             if (UMakeCli.IsInCli)
@@ -29,8 +33,10 @@ public class EditxCodeProject : UMakeBuildAction // Will execute after XCode pro
             }
 
             File.WriteAllText(plistPath, plist.WriteToString()); // Override Info.plist
+#endif
         }
     }
+#if UNITY_IOS
 
     private void UpdateEntry(PlistElementDict rootDict, xCodeProjectEntry entry)
     {
@@ -53,7 +59,7 @@ public class EditxCodeProject : UMakeBuildAction // Will execute after XCode pro
                 break;
         }
     }
-
+#endif
     [System.Serializable]
     public class xCodeProjectEntry
     {
