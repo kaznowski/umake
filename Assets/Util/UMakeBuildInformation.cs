@@ -13,6 +13,7 @@ public class UMakeBuildInformation : ScriptableObject
     [Header("Bundle Infos")]
     public string ApplicationIdentifier;
     public string Version;
+    public string VersionTag;
     public string VersionCode;
     public string BuildDate;
     public int BuildTimeZone = -3;

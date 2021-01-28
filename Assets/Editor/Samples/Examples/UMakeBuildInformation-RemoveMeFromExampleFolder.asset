@@ -18,6 +18,9 @@ MonoBehaviour:
   BuildSymbols: 
   ApplicationIdentifier: com.doublecake.studio
   Version: 0.1
+  VersionTag: Alpha
   VersionCode: 1
+  BuildDate: 
+  BuildTimeZone: -3
   CommitUID: undefined
   CommitBranch: undefined
