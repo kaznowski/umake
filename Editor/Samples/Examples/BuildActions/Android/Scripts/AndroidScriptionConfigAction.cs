@@ -7,6 +7,7 @@ namespace UnityMake
     {
         [SerializeField] private bool ARMv7 = true;
         [SerializeField] private bool ARM64 = false;
+        [SerializeField] private bool BuildAppBundle = false;
 
         public override void Execute(UMake umake, UMakeTarget target)
         {
@@ -14,7 +15,7 @@ namespace UnityMake
             var both = ARM64 && ARMv7;
             if (both)
             {
-                PlayerSettings.Android.targetArchitectures = AndroidArchitecture.All;
+                PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64 | AndroidArchitecture.ARMv7;
             }
             else if (ARMv7)
             {
@@ -25,7 +26,7 @@ namespace UnityMake
                 PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
             }
             
-            
+            EditorUserBuildSettings.buildAppBundle = BuildAppBundle;
         }
     }
 }
