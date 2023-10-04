@@ -87,6 +87,14 @@ namespace UnityMake
 		private void ShowBuildSettings( UMakeTarget t )
 		{
 			t.buildTarget = ( BuildTarget ) EditorGUILayout.EnumPopup( "Build Target", t.buildTarget );
+			
+#if UNITY_2021_1_OR_NEWER
+			if (t.buildTarget == BuildTarget.StandaloneWindows
+			    || t.buildTarget == BuildTarget.StandaloneWindows64)
+			{
+				t.buildStandaloneSubtarget = ( StandaloneBuildSubtarget ) EditorGUILayout.EnumPopup( "Standalone Sub Target", t.buildStandaloneSubtarget );
+			}
+#endif
 
 #if UNITY_5 || UNITY_2017_1 || UNITY_2017_2
 			t.buildOptions = ( BuildOptions ) EditorGUILayout.EnumMaskField( "Build Options", t.buildOptions );

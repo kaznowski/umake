@@ -9,6 +9,9 @@ namespace UnityMake
 	public sealed class UMakeTarget : ScriptableObject
 	{
 		public BuildTarget buildTarget = BuildTarget.StandaloneWindows;
+#if UNITY_2021_1_OR_NEWER
+		public StandaloneBuildSubtarget buildStandaloneSubtarget = StandaloneBuildSubtarget.Player;
+#endif
 		public BuildOptions buildOptions = BuildOptions.None;
 		public string fileNameOverride = "Game_{TARGET}_{VERSION}.exe";
 
@@ -72,7 +75,19 @@ namespace UnityMake
 			}
 
 			string[] levels = EditorBuildSettings.scenes.Where(s => s.enabled).Select(s => s.path).ToArray();
+#if UNITY_2021_1_OR_NEWER
+			var buildPlayerOptions = new BuildPlayerOptions()
+			{
+				scenes = levels,
+				locationPathName = targetPath.path,
+				target = buildTarget,
+				subtarget = (int) buildStandaloneSubtarget,
+				options = buildOptions
+			};
+			BuildPipeline.BuildPlayer(buildPlayerOptions);
+#else
 			BuildPipeline.BuildPlayer(levels, targetPath.path, buildTarget, buildOptions);
+#endif
 		}
 
 		public Path GetTargetPath(string version, string buildPath)
